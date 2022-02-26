@@ -100,23 +100,346 @@ public class SoloLearn_ConditionalsAndLoops {
 
 
         /**
+         * You can win cash by playing the lottery. If the ticket number is a multiple of 10 and 9, the program outputs “You won $200”.
          *
+         * If it is a multiple of 4 or 6, the program outputs “You won $50”. In all other cases, there is no prize and the output is “Try again”.
+         *
+         * Sample Input
+         * 11457
+         *
+         * Sample Output
+         * Try again
+         *
+         * Hint
+         * Number a is a multiple of number b, if a%b == 0.
+         */
+
+//        Scanner read = new Scanner(System.in);
+//        int number = read.nextInt();
+//
+//
+//        //your code goes here
+//        if (number % 9 == 0 &&  number % 10 == 0){
+//            System.out.print("You won $200");
+//        }
+//        else{
+//            if (number % 4 == 0 || number % 6 == 0){
+//                System.out.print("You won $50");
+//            }
+//            else{
+//                System.out.print("Try again");
+//            }
+//        }
+
+//____________________________________________________________________________________________________________________________________________
+
+        /**
+ * Your robot can recognize your emotions marked with number that represents each of them:
+ * 1 - You are happy!
+ * 2 - You are sad!
+ * 3 - You are angry!
+ * 4 - You are surprised!
+ * Write a program that takes the emotion number as input and outputs the corresponding message in given format.
+ * If the input is an emotion that the program doesn’t know, it should output: "Unknown emotion.".
+ *
+ * Sample input
+ * 1
+ *
+ * Sample output
+ * You are happy!
+ */
+//        Scanner scanner = new Scanner(System.in);
+//        int emotion = scanner.nextInt();
+//       /*
+//       1 - "You are happy!"
+//       2 - "You are sad!"
+//       3 - "You are angry!"
+//       4 - "You are surprised!"
+//       other - "Unknown emotion."
+//       */
+//
+//        // your code goes here
+//        switch(emotion){
+//            case 1:
+//                System.out.print("You are happy!");
+//                break;
+//            case 2:
+//                System.out.print("You are sad!");
+//                break;
+//            case 3:
+//                System.out.print("You are angry!");
+//                break;
+//            case 4:
+//                System.out.print("You are surprised!");
+//                break;
+//            default:
+//                System.out.print("Unknown emotion.");
+//        }
+
+
+
+        /**
+ * The switch Expression.
+ * The switch expression allows multiple comma-separated values per case and returns a value for the whole switch-case block.
+ */
+//        int day = 2;
+//        String dayType  = switch(day) {
+//            case 1, 2, 3, 4, 5 -> "Working day";
+//            case 6, 7 -> "Weekend";
+//            default -> "Invalid day";
+//        };
+//        System.out.println(dayType);
+
+        /**
+         * While Loops
+         *
+         *
+         * For your math class you need a program to calculate the factorial of a number.
+         * You're given a program which takes a number as input.
+         *
+         * Task
+         * Complete the program to calculate the factorial of the given number and output it.
+         *
+         * Sample input
+         * 6
+         *
+         * Sample output
+         * 720
+         *
+         * Explanation
+         * The factorial of a number is equal to the product of all numbers less than or equal to the given number.
+         * The factorial of 6 will be 6*5*4*3*2*1 = 720.
+         *
+         * Hint
+         * Use while loop to calculate the factorial of the number.
+         */
+
+//********First Solution**********
+//        int  n = 9;
+//        int c = n;
+//        System.out.print("Факториал числа " + n +" = " );
+//        while ( c > 1){
+//            --c;
+//            n *= c  ;
+//
+//        }
+//            System.out.print(n);
+//
+
+
+//********Second Solution***********
+//        int  n = 5;
+//        int c = 1;
+//        int fact = n;
+////        System.out.print("Факториал числа " + n +" = " );
+//        while ( n > c){
+//            fact *= c;
+//            c++;
+//        }
+//            System.out.print(fact);
+
+        /**
+ * While Loops
+ *
+ *
+ * A client wants you to write a program that prints all numbers from 1 to the inputted number that are either a multiplier of 3 or end with 3.
+ *
+ * Sample input
+ * 14
+ *
+ * Sample output
+ * 3
+ * 6
+ * 9
+ * 12
+ * 13
+ */
+
+//        int number = 14;
+//        int c = 1;
+//        while (number >= c){
+//            if (c % 10 == 3 || c % 3 == 0){
+//                System.out.println(c);
+//            }
+//            ++c;
+//        }
+
+//___________________________________________________________________________________________________________
+//                For LOOPS
+
+        /**
+         *for(int x = 1; x <=5; x++) {
+         *             System.out.println(x);
          */
 
 
+        /**
+         * For Loops
+         *
+         *
+         * You are given code that takes the number of students who enter the university as input. Let's greet them!
+         *
+         * Task
+         * Complete the program to output "Welcome" for each student.
+         *
+         * Sample Input
+         * 2
+         *
+         * Sample Output
+         * Welcome
+         * Welcome
+         */
+
+//         int n = 5;
+//         for (int x = 1; x <= n; x++){
+//             System.out.println("Welcome");
+//         }
 
 
+        /**
+         *For Loops
+         *
+         *
+         * You are a game developer and the game you currently working on is a deck dealer which deals 7 cards representing the players’ roles.
+         * 5 of them are good guys and 2 of them are bad guys.
+         * Write a program that will take the bad guys numbers as input and output all the roles accordingly.
+         *
+         * Sample Input
+         * 1
+         * 4
+         *
+         * Sample Output
+         * Bad guy
+         * Good guy
+         * Good guy
+         * Bad guy
+         * Good guy
+         * Good guy
+         * Good guy
+         *
+         * Explanation
+         * The 1st and the 4th role is "Bad guy".
+         */
+
+//        int firstBadGuy = 1;
+//        int secondBadGuy = 4;
+//        for (int x = 1; x <= 7; x++){
+//            if (firstBadGuy == x || secondBadGuy ==x){
+//                System.out.println("Bad guy");
+//            }
+//            else{
+//                System.out.println("Good guy");
+//            }
+//        }
 
 
+//____________________________________________________________________________________________________
+//                Do While Loops
+
+        /**
+         *public class Program {
+         *     public static void main(String[] args) {
+         *         int x = 1;
+         *         do {
+         *             System.out.println(x);
+         *             x++;
+         *         } while(x < 5);
+         *     }
+         * }
+         */
 
 
+        /**
+         * Do While Loops(Верификация пароля)
+         *
+         *
+         * You're creating a bank security system. The user must insert the correct password in order to access payments.
+         * The password is 8819.
+         *
+         * Task
+         * Write a program that will continuously take a password as input and output Write password, until the client inserts the correct password.
+         *
+         * Sample Input
+         * 3332
+         * 8819
+         *
+         * Sample Output
+         * Write password
+         * Write password
+         */
 
+
+//        Scanner read = new Scanner(System.in);
+//        int rpwd;
+//        int password = 8819;
+//        do {
+//            rpwd =read.nextInt();
+//            System.out.println("Write password");
+//        }while (rpwd != password);
+//
+
+        /**
+         *Do While Loops(Меню Автоотвтчика)
+         *
+         *
+         * You are creating an automated phone system for bank clients.
+         * Number selections should activate the actions noted below as follows:
+         * 1 => Language selection
+         * 2 => Customer support
+         * 3 => Check account balance
+         * 4 => Check loan balance
+         * 0 => Exit
+         *
+         * You can use the first 4 commands in a random sequence without interrupting the phone call - only the number 0 does.
+         * Write a program that will continuously take a number as input and output the corresponding message, until the client enters 0.
+         *
+         * Sample Input
+         * 1
+         * 4
+         * 3
+         * 0
+         *
+         * Sample Output
+         * Language selection
+         * Check loan balance
+         * Check the balance
+         * Exit
+         */
+
+
+//        Scanner scanner = new Scanner(System.in);
+//        int number = scanner.nextInt();
+//        do {
+//            //take input and output corresponding message
+//        /*
+//       1 => Language selection
+//       2 => Customer support
+//       3 => Check the balance
+//       4 => Check loan balance
+//       0 => Exit
+//       */
+//
+//            if (number == 1) {
+//                System.out.println("Language selection");
+//                number = scanner.nextInt();
+//            } else if (number == 2) {
+//                System.out.println("Customer support");
+//                number = scanner.nextInt();
+//            } else if (number == 3) {
+//                System.out.println("Check the balance");
+//                number = scanner.nextInt();
+//            } else if (number == 4) {
+//                System.out.println("Check loan balance");
+//                number = scanner.nextInt();
+//            } else if (number != 0)
+//                number = scanner.nextInt();
+//        }
+//        while(number != 0);
+//        System.out.println("Exit");
 
 
 
 
 
     }
-
 }
-
