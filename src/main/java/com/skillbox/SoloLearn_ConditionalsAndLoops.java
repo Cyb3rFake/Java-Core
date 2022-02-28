@@ -2,7 +2,12 @@ package com.skillbox;
 import java.util.Scanner;
 public class SoloLearn_ConditionalsAndLoops {
     public static void main(String[] args){
+
+// _________________Conditional Statements______________________________________________________________________________
+//
+
        /**
+        *
         You have $12,000 to buy a car.
         You're given a program which takes the price of car as an input.
 
@@ -40,6 +45,8 @@ public class SoloLearn_ConditionalsAndLoops {
 //            System.out.print("Sorry");
 //        }
 
+
+// _________________Nested if Statements________________________________________________________________________________
 
         /**
          * The sales manager decided to give a gift card to the customers whose purchases total more than 15000.
@@ -98,7 +105,7 @@ public class SoloLearn_ConditionalsAndLoops {
 //        }
 //    }
 
-
+//____________________Logical Operators_________________________________________________________________________________
         /**
          * You can win cash by playing the lottery. If the ticket number is a multiple of 10 and 9, the program outputs “You won $200”.
          *
@@ -131,7 +138,7 @@ public class SoloLearn_ConditionalsAndLoops {
 //            }
 //        }
 
-//____________________________________________________________________________________________________________________________________________
+//________________________The switch Statement__________________________________________________________________________
 
         /**
  * Your robot can recognize your emotions marked with number that represents each of them:
@@ -176,6 +183,7 @@ public class SoloLearn_ConditionalsAndLoops {
 //                System.out.print("Unknown emotion.");
 //        }
 
+//__________________
 
 
         /**
@@ -190,6 +198,8 @@ public class SoloLearn_ConditionalsAndLoops {
 //        };
 //        System.out.println(dayType);
 
+
+//_______________________While Loops____________________________________________________________________________________
         /**
          * While Loops
          *
@@ -254,24 +264,25 @@ public class SoloLearn_ConditionalsAndLoops {
  * 12
  * 13
  */
+/*
+        int number = 14;
+        int c = 1;
+        while (number >= c){
+            if (c % 10 == 3 || c % 3 == 0){
+                System.out.println(c);
+            }
+            ++c;
+        }
+*/
 
-//        int number = 14;
-//        int c = 1;
-//        while (number >= c){
-//            if (c % 10 == 3 || c % 3 == 0){
-//                System.out.println(c);
-//            }
-//            ++c;
-//        }
 
-//___________________________________________________________________________________________________________
-//                For LOOPS
+
+//_______________________ For LOOPS____________________________________________________________________________________
 
         /**
          *for(int x = 1; x <=5; x++) {
          *             System.out.println(x);
          */
-
 
         /**
          * For Loops
@@ -321,20 +332,21 @@ public class SoloLearn_ConditionalsAndLoops {
          * The 1st and the 4th role is "Bad guy".
          */
 
-//        int firstBadGuy = 1;
-//        int secondBadGuy = 4;
-//        for (int x = 1; x <= 7; x++){
-//            if (firstBadGuy == x || secondBadGuy ==x){
-//                System.out.println("Bad guy");
-//            }
-//            else{
-//                System.out.println("Good guy");
-//            }
-//        }
+        /*
+        int firstBadGuy = 1;
+        int secondBadGuy = 4;
+        for (int x = 1; x <= 7; x++){
+            if (firstBadGuy == x || secondBadGuy ==x){
+                System.out.println("Bad guy");
+            }
+            else{
+                System.out.println("Good guy");
+            }
+        }
+*/
 
+//________________Do While Loops________________________________________________________________________________________
 
-//____________________________________________________________________________________________________
-//                Do While Loops
 
         /**
          *public class Program {
@@ -438,7 +450,71 @@ public class SoloLearn_ConditionalsAndLoops {
 //        System.out.println("Exit");
 
 
+//____________________Do While Loops
 
+/**Do While Loops
+ Write a program that takes N numbers as input and outputs the numbers from N to 0, skipping the ones that are multiple of 3.
+ Sample Input
+ 7
+ Sample Output
+ 7
+ 5
+ 4
+ 2
+ 1
+ 0
+ *
+ */
+ /*
+        int n = 7;
+        do {
+            if (n % 3 != 0) {
+                System.out.println(n);
+            }
+            --n;
+        }while (n >= 0);
+        System.out.println("0");
+ */
+
+/**
+ * Loan Calculator(Калькултятор заемщика)
+ *
+ * You take a loan from a friend and need to calculate how much you will owe him after 3 months.
+ * You are going to pay him back 10% of the remaining loan amount each month.
+ * Create a program that takes the loan amount as input, calculates and outputs the remaining amount after 3 months.
+ *
+ * Sample Input:
+ * 20000
+ *
+ * Sample Output:
+ * 10628
+ *
+ * Here is the monthly payment schedule:
+ * Month 1
+ * Payment: 10% of 20000 = 2000
+ * Remaining amount: 18000
+ * Month 2
+ * Payment: 10% of 18000 = 1800
+ * Remaining amount: 16200
+ * Month 3:
+ * Payment: 10% of 16200 = 1620
+ * Remaining amount: 14580
+ */
+        int s = 20000;
+        int p = 10;
+        int m = 0;
+        int payment = s;
+        int d =0;
+        for (int x=1; x<=3; x++){
+            payment = payment - (payment / p);
+            m = (payment / p);
+            System.out.println("Платеж за " +x +"й месяц "+ m);
+            System.out.println("           Остаток "+ payment);
+            System.out.println("");
+            d+=m;
+        }
+        System.out.println("Всего выплачено = "+ d);
+        System.out.println("Оставшаяся сумма = " +(s - d) );
 
 
     }
