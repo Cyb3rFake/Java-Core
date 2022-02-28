@@ -476,6 +476,8 @@ public class SoloLearn_ConditionalsAndLoops {
         System.out.println("0");
  */
 
+
+//__________________________FinalTask___________________________________________________________________________________
 /**
  * Loan Calculator(Калькултятор заемщика)
  *
@@ -500,22 +502,26 @@ public class SoloLearn_ConditionalsAndLoops {
  * Payment: 10% of 16200 = 1620
  * Remaining amount: 14580
  */
+
+
+ /*
         int s = 20000;
         int p = 10;
         int m = 0;
         int payment = s;
         int d =0;
+        int sum = 0;
         for (int x=1; x<=3; x++){
-            payment = payment - (payment / p);
-            m = (payment / p);
-            System.out.println("Платеж за " +x +"й месяц "+ m);
-            System.out.println("           Остаток "+ payment);
-            System.out.println("");
-            d+=m;
-        }
-        System.out.println("Всего выплачено = "+ d);
-        System.out.println("Оставшаяся сумма = " +(s - d) );
-
+           payment = payment - d; //18000
+            d = payment * 10/100; //оплата за месяц
+            m = payment - d;
+            System.out.println("Платеж за " +x +"й месяц "+ d );
+            System.out.println("Остаток за "+ x+ "й месяц "+ m);
+            System.out.println("  ");
+            sum +=d;
+      }
+        System.out.println("Оставшаяся сумма = " + (s - sum));
+ */
 
     }
 }
