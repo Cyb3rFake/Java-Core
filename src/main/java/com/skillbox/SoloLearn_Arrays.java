@@ -2,7 +2,7 @@ package com.skillbox;
 
 import java.util.Scanner;
 
-public class Arrays {
+public class SoloLearn_Arrays {
     public static void main(String[] args){
 
         /**Arrays
@@ -109,7 +109,7 @@ public class Arrays {
          */
 
 
-        //Practice Enhanced for Loop____________________________________________________________________________________
+        //Practice__________Enhanced for Loop____________________________________________________________________________________
         /**
          * Your company is writing a program for a geometry course.
          * The program takes the number of squares as the first input, creates an array, and then takes the sides of squares as its elements.
@@ -128,13 +128,105 @@ public class Arrays {
          * In this example we have 2 squares (the first input) and their sides accordingly - 3 and 4 (the second and the third inputs). The area of the first square is 9 (3*3), the second one 16 (4*4).
          */
 
+        /*
+        Scanner scanner = new Scanner(System.in);
+        int length = scanner.nextInt();
+        int[] sides =  new int[length];
+        for (int i = 0; i < length; i++) {
+            sides[i] =scanner.nextInt();
+            System.out.println(sides[i]*sides[i]);
+        }
+        */
 
-//        Scanner scanner = new Scanner(System.in);
-//        int length = scanner.nextInt();
-//        int[] sides =  new int[length];
-//        for (int i = 0; i < length; i++) {
-//            sides[i] = scanner.nextInt();
+        //______________Multidimensional Arrays_________________________________________________________________________
+        /**
+         *         int[ ][ ] sample = { {1, 2, 3}, {4, 5, 6} };
+         *         int x = sample[0][2];
+         *         System.out.println(x);
+         *     }
+         *
+         *           int[ ][ ] myArr = { {1, 2, 3}, {4}, {5, 6, 7} };
+         *         myArr[0][2] = 42;
+         *         int x = myArr[0][2];
+         *         System.out.println(x);
+         */
+
+//_______________________________Вывод в консоль 2х мерного массива_____________________________________________________
+//        int[][] matrix = {
+//                {8, 1, 6},
+//                {3, 5, 7},
+//                {4, 9, 0},
+//        };
+//        for (int i = 0; i < 3; i++){
+//            for (int j = 0; j<3; j++){
+//                System.out.print(" "+ matrix[i][j]+ " ");//печать всей матрицы
+//            }
+//            System.out.println();
 //        }
+//______________________________________________________________________________________________________________________
+
+        //Practice______Multidimensional Arrays_________________________________________________________________________
+        /**
+         * You are given a 3x3 matrix with numbers:
+         *     {8, 1, 6},
+         *     {3, 5, 7},
+         *     {4, 9, 0},
+         *     Output the numbers of the array, each on a new line.
+
+         */
+        /*
+        int[][] matrix = {
+                {8, 1, 6},
+                {3, 5, 7},
+                {4, 9, 0},
+        };
+        //output the numbers
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j<3; j++){
+                System.out.println(matrix[i][j]);
+            }
+        }
+
+         */
+
+//_____________________________________________________________________________________________________________________
+        /*
+        int arr[] = new int[3];
+
+        System.out.print("массив arr[]: ");
+        for (int i =0 ; i<3; i++){
+            arr[i]=i;
+            System.out.print(arr[i]+ " " );
+        }
+        System.out.println("");
+        int  res = arr[0] + arr[2];
+        System.out.println(res);
+        */
+
+        //Practice(Final_arrays)__Rverse a String_______________________________________________________________________
+        /**
+         * Reverse a String
+         *
+         *
+         * Write a program to take a string as input and output its reverse.
+         * The given code takes a string as input and converts it into a char array, which contains letters of the string as its elements.
+         *
+         * Sample Input:
+         * hello there
+         *
+         * Sample Output:
+         * ereht olleh
+         */
+        /*
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        char[] arr = text.toCharArray();
+        for (int i = arr.length -1; i>=0; i--){
+            System.out.print(arr[i]);
+        }
+        */
+
+
 
 
 
