@@ -1,0 +1,140 @@
+27.1 Object-Oriented Programming
+Object-Orientation
+
+Java uses Object-Oriented Programming (OOP), a programming style that is intended to make thinking about programming closer to thinking about the real world.
+In OOP, each object is an independent unit with a unique identity, just as objects in the real world are.
+An apple is an object; so is a mug. Each has its unique identity. It's possible to have two mugs that look identical, but they are still separate, unique objects.
+Objects also have characteristics, which are used to describe them.
+
+For example, a car can be red or blue, a mug can be full or empty, and so on. These characteristics are also called attributes. An attribute describes the current state of an object.
+In the real world, each object behaves in its own way. The car moves, the phone rings, and so on.
+The same applies to objects: behavior is specific to the object's type.
+In summary, in object oriented programming, each object has three dimensions: identity, attributes, and behavior.
+Attributes describe the object's current state, and what the object is capable of doing is demonstrated through the object's behavior.
+Classes
+
+A class describes what the object will be, but is separate from the object itself.
+In other words, classes can be described as blueprints, descriptions, or definitions for an object. You can use the same class as a blueprint for creating multiple objects. The first step is to define the class, which then becomes a blueprint for object creation.
+
+Each class has a name, and each is used to define attributes and behavior.
+Some examples of attributes and behavior:contentImage
+In other words, an object is an instance of a class.
+
+
+28.1 Methods
+
+Methods define behavior. A method is a collection of statements that are grouped together to perform an operation. System.out.println() is an example of a method.
+You can define your own methods to perform your desired tasks.
+Let's consider the following code:
+
+class MyClass {
+
+    static void sayHello() {
+        System.out.println("Hello World!");
+    }
+
+    public static void main(String[ ] args) {
+        sayHello();
+    }
+
+}
+The code above declares a method called "sayHello", which prints a text, and then gets called in main.
+
+28.1 Creating Classes & Objects
+
+Creating Objects
+
+Let's head over to our main and create a new object of our class.
+MyClass.java
+
+public class Animal {
+    void bark() {
+        System.out.println("Woof-Woof");
+    }
+}
+
+class MyClass {
+    public static void main(String[ ] args) {
+        Animal dog = new Animal();
+        dog.bark();
+    }
+}
+
+Now, dog is an object of type Animal. Thus we can call its bark() method, using the name of the object and a dot.
+The dot notation is used to access the object's attributes and methods.
+
+31.1 Class Attributes
+
+Defining Attributes
+
+A class has attributes and methods. The attributes are basically variables within a class.
+Let's create a class called Vehicle, with its corresponding attributes and methods.
+
+public class Vehicle {
+  int maxSpeed;
+  int wheels;
+  String color;
+  double fuelCapacity;
+
+  void horn() {
+    System.out.println("Beep!");
+  }
+}
+maxSpeed, wheels, color and fuelCapacity are the attributes of our Vehicle class, and horn() is the only method.
+
+
+31.1 Creating Objects
+Next, we can create multiple objects of our Vehicle class, and use the dot syntax to access their attributes and methods.
+
+public class Vehicle {
+    int maxSpeed;
+    int wheels;
+    String color;
+    double fuelCapacity;
+
+    void horn() {
+        System.out.println("Beep!");
+    }
+}
+
+class MyClass {
+    public static void main(String[ ] args) {
+        Vehicle v1 = new Vehicle();
+        Vehicle v2 = new Vehicle();
+        v1.color = "red";
+        v2.horn();
+    }
+}
+
+32.1Access Modifiers
+
+
+    Now let's discuss the public keyword in front of the main method.
+    public static void main(String[ ] args)
+
+    public is an access modifier, meaning that it is used to set the level of access. You can use access modifiers for classes, attributes, and methods.
+
+    For classes, the available modifiers are public or default (left blank), as described below:
+    public: The class is accessible by any other class.
+    default: The class is accessible only by classes in the same package.
+
+    The following choices are available for attributes and methods:
+    default: A variable or method declared with no access control modifier is available to any other class in the same package.
+    public: Accessible from any other class.
+    protected: Provides the same access as the default access modifier, with the addition that subclasses can access protected methods and variables of the superclass (Subclasses and superclasses are covered in upcoming lessons).
+    private: Accessible only within the declared class itself.
+
+    Example:
+    public class Vehicle {
+      private int maxSpeed;
+      private int wheels;
+      private String color;
+      private double fuelCapacity;
+
+      public void horn() {
+        System.out.println("Beep!");
+      }
+    }
+
+    It's a best practice to keep the variables within a class private. The variables are accessible and modified using Getters and Setters.
+    Tap Continue to learn about Getters and Setters.

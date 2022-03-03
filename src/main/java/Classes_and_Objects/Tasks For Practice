@@ -1,0 +1,57 @@
+28.2 Friendly Robot
+Methods
+You are creating a robot, "Welcomer 2000", that never fails to greet a single person it encounters. You provide the number of people that will enter the room, and the robot will shout "Welcome" that number of times.
+The program you are given already takes a number as input and calls the method according provided count. The issue is that the method is incomplete. Fix it.
+Sample Input
+2
+Sample Output
+Welcome!
+Welcome!
+
+28.3 Area Of A Rectangle
+Method Parameters
+The program you are given takes length and width of a rectangle as input.
+Complete the method to take them as parameters, then calculate and output the area of the rectangle.
+Sample Input
+4
+5
+Sample Output
+20
+
+30.2 Loading, Loading, Loading
+Creating Classes & Objects
+Create a program to show loading message to your application users.
+Define a class Loading which has one public method called LoadingMessage(), which should print "Loading" when called.
+Create an object named loading and call that method.
+Don't forget to use new keyword while creating an object.
+
+31.2 Tracking Customer Data
+Class Attributes
+You are the administrator of a hotel and must create customer information cards for your new customers. On the card, you must note the customer’s first and last name, age, and room number.
+The program you are given takes a guest's data (first name, last name, age, and room number) as input.
+Complete the class by adding corresponding attributes so that the saveCustomerInfo() method works correctly. Also assign taken data values to attributes of created object.
+Sample Input
+John
+Smith
+35
+204
+Sample Output
+First name: John
+Second name: Smith
+Age: 35
+Room number: 204
+
+32.2 Going Places
+Access Modifiers
+You're a tour manager and you need to have a list of countries along with its capitals.
+You're given a program which creates Country object and you should output the name and the capital, but something goes wrong.
+Task
+Change the access modifiers of the Country class fields in order to perform the required output.
+Use public access modifier to provide access to any other classes.
+
+32.3
+Access Modifiers
+You are a manager at company that have two employees, James and Tom.
+You wrote a program to calculate total employee salary: it creates two objects for workers and sets the corresponding parameters.
+But something is wrong. The program doesn't provide access to attributes. Fix it.
+Also complete the method to calculate and return the total salary.
