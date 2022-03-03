@@ -1,0 +1,123 @@
+2.2 Your First Java Program
+Complete the given program to print "Java is fun".
+Note that the sentence starts with a capital letter.
+Hint
+Just add the text to the System.out.println() method
+Remember to enclose the text into double quotes.
+
+3.2 To Comment Or Not To Comment
+Java Comments
+You are given lines of commented code. Uncomment the required lines in order to have a "Java is awesome" output.
+
+3.3 Printing Numbers
+Java Comments
+A programmer wrote a program to print odd numbers. He wanted to explain how the program works in the code, but he forgot to comment and the program does not work. Comment lines so that it prints the odd numbers.
+
+4.2 Vehicle Passport
+Variables
+You are given code which outputs the properties of a vehicle, but something is wrong.
+Task
+Fix the code to print the properties.
+Output
+Name: Toyota
+Engine: 4.7
+Year: 2019
+
+4.3 Accurate Collage Information
+Variables
+A college's data system stores information about its students, such as their names, ages, average scores, and whether they graduated or not. Variables representing these parameters are declared incorrectly in the system's code. Fix the errors so that the system can print the values.
+Sample:
+John
+21
+false
+4.3
+
+6.2 Once In The Bar
+Primitive Operators
+A bartender sold 64 bottles of beer and 23 bottles of whisky. You need to calculate how many total bottles are sold.
+Task
+Calculate and output the total number of sold bottles.
+
+6.3 HR Budget
+Primitive Operators
+You have two employees in your organization.
+Write a program to take their salaries as input and print them both out.
+Sample Input
+1500
+3200
+Sample output
+4700
+
+6.4 Drawing Class
+Primitive Operators
+You need to calculate how many pencils are in the classroom.
+You're given code which takes as input the number of students and the number of pencils each of them has.
+Task
+Calculate and output the total number of pencils.
+Sample Input
+11
+3
+Sample Output
+33
+
+6.5 2πr
+Primitive Operators
+During your math class, you are given a task to calculate the perimeter of a circle.
+You decide to write a small program that will take the radius as input, and will calculate and print the perimeter for you.
+The value for π (pi) is already defined.
+Sample Input
+4
+Sample Output
+25.12
+
+6.6 Tour Agency
+Primitive Operators
+You are a manager at a tour agency and need to determine the distances between cities.
+The given program takes distance in meters as input.
+Task
+Complete the code to output the distance in kilometers and meters each on a new line.
+Sample Input
+3644
+Sample Output
+3
+644
+Explanation
+1 kilometer is 1000 meters, therefore 3644 meters is equal to 3 kilometers and 644 meters.
+
+6.7 Time for homework
+Primitive Operators
+Students are given homework in math, history, and geometry.
+Write a program that takes the time spent on each subject as input, and calculates and outputs the total number of hours and minutes spent on each subject, each on a new line accordingly.
+Sample Input
+35
+40
+39
+Sample Output
+1
+54
+Explanation
+The total amount of spent minutes is 114, which is equal to 1 hour (the first output) and 54 minutes (the second output).
+
+7.2 Who scored more?
+Increment & Decrement
+Tom and Bob are playing a board game, in which both players start with the same number of points. Tom won the first game and got 1 point, while Bob lost the game, and therefore lost 1 point.
+You are given a program that is intended to take the initial score and increase Tom's score by 1 and decrease Bob's score by 1.
+But something is wrong: the program outputs the scores without the change.
+Task
+Fix the program to result in the expected outputs.
+Sample Input
+5
+Sample Output
+Round 1 results:
+6
+4
+Explanation
+Both players had 5 points at the start of the game. After the first game, Tom gained 1 point (6, the first outputted number), and Bob lost 1 point (4, the second outputted number).
+
+10 Time Converter
+You need a program to convert days to seconds.
+The given code takes the amount of days as input. Complete the code to convert it to seconds and output the result.
+Sample Input:
+12
+Sample Output:
+1036800

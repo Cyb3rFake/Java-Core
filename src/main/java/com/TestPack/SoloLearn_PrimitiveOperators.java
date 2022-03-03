@@ -1,4 +1,4 @@
-package com.skillbox;
+package com.TestPack;
 //Primitive Operators
 
 //        Task
@@ -13,7 +13,6 @@ package com.skillbox;
 //
 //        Explanation
 //        1 kilometer is 1000 meters, therefore 3644 meters is equal to 3 kilometers and 644 meters.
-import java.util.Scanner;
 
 public class SoloLearn_PrimitiveOperators {
     public static void P1(String[] args) {

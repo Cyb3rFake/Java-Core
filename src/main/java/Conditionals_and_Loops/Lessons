@@ -1,0 +1,199 @@
+11.1 Conditional Statements
+
+Decision Making
+Conditional statements are used to perform different actions based on different conditions.
+The if statement is one of the most frequently used conditional statements.
+If the if statement's condition expression evaluates to true, the block of code inside the if statement is executed. If the expression is found to be false, the first set of code after the end of the if statement (after the closing curly brace) is executed.
+Syntax:
+if (condition) {
+   //Executes when the condition is true
+}
+
+Any of the following comparison operators may be used to form the condition:
+< less than
+> greater than
+!= not equal to
+== equal to
+<= less than or equal to
+>= greater than or equal to
+
+For example:
+Remember that you need to use two equal signs (==) to test for equality, since a single equal sign is the assignment operator.
+
+
+12.1 Nested if Statements
+
+You can use one if-else statement inside another if or else statement.
+For example:
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        if(age > 0) {
+            if(age > 16) {
+                System.out.println("Welcome!");
+            } else {
+                System.out.println("Too Young");
+            }
+        } else {
+            System.out.println("Error");
+        }
+    }
+}
+
+
+
+13.1 else if Statements
+
+Instead of using nested if-else statements, you can use the else if statement to check multiple conditions.
+For example:
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        if(age <= 0) {
+            System.out.println("Error");
+        } else if(age <= 16) {
+            System.out.println("Too Young");
+        } else if(age < 100) {
+            System.out.println("Welcome!");
+        } else {
+            System.out.println("Really?");
+        }
+    }
+}
+
+
+
+14.1 Logical Operators
+
+Logical operators are used to combine multiple conditions.
+
+Let's say you wanted your program to output "Welcome!" only when the variable age is greater than 18 and the variable money is greater than 500.
+One way to accomplish this is to use nested if statements:
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 22;
+        int money = 800;
+
+        if (age > 18) {
+            if (money > 500) {
+                System.out.println("Welcome!");
+            }
+        }
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 22;
+        int money = 800;
+
+        if (age > 18 && money > 500) {
+            System.out.println("Welcome!");
+        }
+    }
+}
+
+
+15.1 The switch Statement
+
+A switch statement tests a variable for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case.
+Syntax:
+switch (expression) {
+   case value1 :
+     //Statements
+     break; //optional
+   case value2 :
+     //Statements
+     break; //optional
+    //You can have any number of case statements.
+    default : //Optional
+       //Statements
+}
+
+- When the variable being switched on is equal to a case, the statements following that case will execute until a break statement is reached.
+- When a break statement is reached, the switch terminates, and the flow of control jumps to the next line after the switch statement.
+- Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.
+
+The example below tests day against a set of values and prints a corresponding message.
+public class Program {
+    public static void main(String[] args) {
+        int day = 3;
+        switch(day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+        }
+    }
+}
+
+16.1 while Loops
+
+A loop statement allows to repeatedly execute a statement or group of statements.
+A while loop statement repeatedly executes a target statement as long as a given condition is true.
+Example:
+public class Program {
+    public static void main(String[] args) {
+        int x = 3;
+        while(x > 0) {
+            System.out.println(x);
+            x--;
+        }
+    }
+}
+
+
+17.1 for Loops
+
+Another loop structure is the for loop. A for loop allows you to efficiently write a loop that needs to execute a specific number of times.
+Syntax:
+for (initialization; condition; increment/decrement) {
+   statement(s)
+}
+JAVA
+Initialization: Expression executes only once during the beginning of loop
+Condition: Is evaluated each time the loop iterates. The loop executes the statement repeatedly, until this condition returns false.
+Increment/Decrement: Executes after each iteration of the loop.
+
+The following example prints the numbers 1 through 5.
+public class Program {
+    public static void main(String[] args) {
+        for(int x = 1; x <=5; x++) {
+            System.out.println(x);
+        }
+    }
+}
+This initializes x to the value 1, and repeatedly prints the value of x, until the condition x<=5 becomes false. On each iteration, the statement x++ is executed, incrementing x by one.
+
+
+18.1 do...while Loops
+
+A do...while loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.
+Example:
+public class Program {
+    public static void main(String[] args) {
+        int x = 1;
+        do {
+            System.out.println(x);
+            x++;
+        } while(x < 5);
+    }
+}
+Notice that the condition appears at the end of the loop, so the statements in the loop execute once before it is tested.
+Even with a false condition, the code will run once.
+Example:
+public class Program {
+    public static void main(String[] args) {
+        int x = 1;
+        do {
+            System.out.println(x);
+            x++;
+        } while(x < 0);
+    }
+}

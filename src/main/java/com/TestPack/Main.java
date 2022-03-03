@@ -1,4 +1,4 @@
-package com.skillbox;
+package com.TestPack;
 
 public class Main {
     public static void main(String[] args) {

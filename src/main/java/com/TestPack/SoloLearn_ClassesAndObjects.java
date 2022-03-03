@@ -1,6 +1,4 @@
-package com.skillbox;
-
-import java.util.Scanner;
+package com.TestPack;
 
 public class SoloLearn_ClassesAndObjects {
 

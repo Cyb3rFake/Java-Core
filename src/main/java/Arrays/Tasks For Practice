@@ -1,0 +1,51 @@
+21.2 Fix The Calendar
+Arrays
+Your calendar program should output all the days of week, but it has errors.
+Change the code so that the program prints the days.
+
+22.2 Summing Multiples
+Summing Elements in Arrays
+You are given a program that takes the length of the array as the first input, creates it, and then takes the next inputs as elements of the array.
+Complete the program to go through the array and calculate the sum of the numbers that are multiples of 4.
+Sample Input
+5
+4
+9
+16
+2
+7
+Sample Output
+20
+
+23.2 Geometry Code
+Enhanced for Loop
+Your company is writing a program for a geometry course.
+The program takes the number of squares as the first input, creates an array, and then takes the sides of squares as its elements.
+Write the part of the program that receives a list of square sides and prints the area of those squares for the user.
+Sample Input
+2
+3
+4
+Output
+9
+16
+Explanation
+In this example we have 2 squares (the first input) and their sides accordingly - 3 and 4 (the second and the third inputs). The area of the first square is 9 (3*3), the second one 16 (4*4).
+
+24.2 Matrix
+Multidimensional Arrays
+You are given a 3x3 matrix with numbers:
+int[][] matrix = {
+{8, 1, 6},
+{3, 5, 7},
+{4, 9, 0},
+}
+
+26.0 Code project
+Reverse a String
+Write a program to take a string as input and output its reverse.
+The given code takes a string as input and converts it into a char array, which contains letters of the string as its elements.
+Sample Input:
+hello there
+Sample Output:
+ereht olleh

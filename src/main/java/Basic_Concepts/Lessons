@@ -1,0 +1,104 @@
+1.1 Welcome to Java!
+
+Java is a high level, modern programming language designed in the early 1990s by Sun Microsystems, and currently owned by Oracle.
+Java is Platform Independent, which means that you only need to write the program once to be able to run it on a number of different platforms!
+Java is portable, robust, and dynamic, with the ability to fit the needs of virtually any type of application.
+
+
+2.1 Your First Java Program
+
+Let's start by creating a simple program that prints “Hello World” to the screen.
+class MyClass {
+    public static void main(String[ ] args) {
+        System.out.println("Hello World");
+    }
+}
+In Java, every line of code that can actually run needs to be inside a class.
+In our example, we named the class MyClass. You will learn more about classes in the upcoming modules.
+
+In Java, each application has an entry point, or a starting point, which is a method called main. Along with main, the keywords public and static will also be explained later.
+As a summary:
+- Every program in Java must have a class.
+- Every Java program starts from the main method.
+
+
+3.1 Comments
+
+The purpose of including comments in your code is to explain what the code is doing.
+Java supports both single and multi-line comments. All characters that appear within a comment are ignored by the Java compiler.
+
+A single-line comment starts with two forward slashes and continues until it reaches the end of the line.
+For example:
+// this is a single-line comment
+x = 5; // a single-line comment after code
+
+4.1 Variables
+
+Variables store data for processing.
+A variable is given a name (or identifier), such as area, age, height, and the like. The name uniquely identifies each variable, assigning a value to the variable and retrieving the value stored.
+
+Variables have types. Some examples:
+- int: for integers (whole numbers) such as 123 and -456
+- double: for floating-point or real numbers with optional decimal points and fractional parts in fixed or scientific notations, such as 3.1416, -55.66.
+- String: for texts such as "Hello" or "Good Morning!". Text strings are enclosed within double quotes.
+
+You can declare a variable of a type and assign it a value.
+Example:
+String name = "David";
+
+This creates a variable called name of type String, and assigns it the value "David".
+
+5.1 Getting User Input
+
+While Java provides many different methods for getting user input, the Scanner object is the most common, and perhaps the easiest to implement. Import the Scanner class to use the Scanner object, as seen here:
+import java.util.Scanner;
+JAVA
+In order to use the Scanner class, create an instance of the class by using the following syntax:
+Scanner myVar = new Scanner(System.in);
+JAVA
+You can now read in different kinds of input data that the user enters.
+Here are some methods that are available through the Scanner class:
+Read a byte - nextByte()
+Read a short - nextShort()
+Read an int - nextInt()
+Read a long - nextLong()
+Read a float - nextFloat()
+Read a double - nextDouble()
+Read a boolean - nextBoolean()
+Read a complete line - nextLine()
+Read a word - next()
+
+Example of a program used to get user input:
+import java.util.Scanner;
+
+class MyClass {
+    public static void main(String[ ] args) {
+        Scanner myVar = new Scanner(System.in);
+        System.out.println(myVar.nextLine());
+    }
+}
+
+
+
+7.1 Increment Operators
+
+An increment or decrement operator provides a more convenient and compact way to increase or decrease the value of a variable by one.
+For example, the statement x=x+1; can be simplified to ++x;
+Example:
+public class Program {
+    public static void main(String[] args) {
+        int test = 5;
+        ++test;
+
+        System.out.println(test);
+    }
+}
+
+
+
+8.1 Strings
+
+A String is an object that represents a sequence of characters.
+For example, "Hello" is a string of 5 characters.
+For example:
+String s = "SoloLearn";

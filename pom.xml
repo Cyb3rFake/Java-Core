@@ -40,7 +40,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.skillbox.Main</mainClass>
+                            <mainClass>com.TestPack.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

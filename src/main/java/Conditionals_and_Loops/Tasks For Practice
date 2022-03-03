@@ -1,0 +1,213 @@
+11.2 In The Car Salon
+Conditional Statements
+You have $12,000 to buy a car.
+You're given a program which takes the price of car as an input.
+Task
+Output "yes" if the price is lower than or equal to 12,000.
+Sample Input
+11000
+Sample Output
+yes
+Use the if statement to check the required condition.
+
+11.3 Congratulations
+Students can apply for a scholarship if their average grade is higher than 3.5.
+Write a program that prints “Congratulations” if the student meets the average grade requirement, and “Sorry” if not.
+Sample Input:
+2.9
+Sample Output:
+Sorry
+The input value should be a double.
+
+12.2 Loyal Customers 
+Nested if Statements
+The sales manager decided to give a gift card to the customers whose purchases total more than 15000. On top of this, the customers whose total purchase is above 30000 will receive a second gift card.
+You are given a program, which takes the purchase amount as input, and print "Gift card" if it is above 15000.
+Task
+Complete the code to print "Gift card" again if the purchase is above 30000.
+Sample Input
+36000
+Sample Output
+Gift card
+Gift card
+
+12.3 Win, Lose or Draw
+Nested if Statements
+You are an administrator at a football club who must categorize already played games on the team's website.
+The given program takes 3 inputs:
+1.match status - which checks if the match is suspended ("true") or not suspended ("false")
+2.your team's score
+3.opposing team's score.
+   Complete the program so that if the match is suspended (the 1st input is "true"), it will output "Suspended".
+   If the match is not suspended ( the1st output is false), the following statuses should be set depending on the match result: "Won", "Lost" and "Draw".
+Sample Input
+false
+3
+2
+Sample Output
+Won
+
+14.2 Let's Explore 
+Logical Statements
+You're a tour manager and need a program that will identify small countries.
+A country is considered small if its population is under 10000 and its area is under 10000 hectares.
+The given program takes population and area as input.
+Task
+Complete the program to output "small country" if both conditions are met. Don't output anything otherwise.
+Sample Input
+9955
+7522
+Sample Output
+small country
+Use && to combine conditions.
+
+14.3 Lucky Winner 
+Logical Statements
+You can win cash by playing the lottery. If the ticket number is a multiple of 10 and 9, the program outputs “You won $200”.
+If it is a multiple of 4 or 6, the program outputs “You won $50”. In all other cases, there is no prize and the output is “Try again”.
+Sample Input
+11457
+Sample Output
+Try again
+Hint
+Number a is a multiple of number b, if a%b == 0.
+Use && and || operators for multiple conditions.
+
+15.2 Emotion Detector
+The switch Statement
+Your robot can recognize your emotions marked with number that represents each of them:
+1 - You are happy!
+2 - You are sad!
+3 - You are angry!
+4 - You are surprised!
+Write a program that takes the emotion number as input and outputs the corresponding message in given format.
+If the input is an emotion that the program doesn’t know, it should output: "Unknown emotion.".
+Sample input
+1
+Sample output
+You are happy!
+
+16.2 Math Class
+While Loops
+For your math class you need a program to calculate the factorial of a number.
+You're given a program which takes a number as input.
+Task
+Complete the program to calculate the factorial of the given number and output it.
+Sample input
+6
+Sample output
+720
+Explanation
+The factorial of a number is equal to the product of all numbers less than or equal to the given number.
+The factorial of 6 will be 6*5*4*3*2*1 = 720.
+Hint
+Use while loop to calculate the factorial of the number.
+
+16.3 Being Choosy
+While Loops
+A client wants you to write a program that prints all numbers from 1 to the inputted number that are either a multiplier of 3 or end with 3.
+Sample input
+14
+Sample output
+3
+6
+9
+12
+13
+
+17.2 University Admission
+For Loops
+You are given code that takes the number of students who enter the university as input. Let's greet them!
+Task
+Complete the program to output "Welcome" for each student.
+Sample Input
+2
+Sample Output
+Welcome
+Welcome
+
+17.3 Board Game Players
+For Loops
+You are a game developer and the game you currently working on is a deck dealer which deals 7 cards representing the players’ roles.
+5 of them are good guys and 2 of them are bad guys.
+Write a program that will take the bad guys numbers as input and output all the roles accordingly.
+Sample Input
+1
+4
+Sample Output
+Bad guy
+Good guy
+Good guy
+Bad guy
+Good guy
+Good guy
+Good guy
+Explanation
+The 1st and the 4th role is "Bad guy".
+
+18.2 Safety First
+Do While Loops
+You're creating a bank security system. The user must insert the correct password in order to access payments.
+The password is 8819.
+Task
+Write a program that will continuously take a password as input and output Write password, until the client inserts the correct password.
+Sample Input
+3332
+8819
+Sample Output
+Write password
+Write password
+
+18.3 Press 2 to contact customer
+Do While Loops
+You are creating an automated phone system for bank clients.
+Number selections should activate the actions noted below as follows:
+1 => Language selection
+2 => Customer support
+3 => Check account balance
+4 => Check loan balance
+0 => Exit
+You can use the first 4 commands in a random sequence without interrupting the phone call - only the number 0 does.
+Write a program that will continuously take a number as input and output the corresponding message, until the client enters 0.
+Sample Input
+1
+4
+3
+0
+Sample Output
+Language selection
+Check loan balance
+Check the balance
+Exit
+
+18.4 No more threes
+Do While Loops
+Write a program that takes N numbers as input and outputs the numbers from N to 0, skipping the ones that are multiple of 3.
+Sample Input
+7
+Sample Output
+7
+5
+4
+2
+1
+0
+
+20 Loan Calculator
+You take a loan from a friend and need to calculate how much you will owe him after 3 months.
+You are going to pay him back 10% of the remaining loan amount each month.
+Create a program that takes the loan amount as input, calculates and outputs the remaining amount after 3 months.
+Sample Input:
+20000
+Sample Output:
+10628
+Here is the monthly payment schedule:
+Month 1
+Payment: 10% of 20000 = 2000
+Remaining amount: 18000
+Month 2
+Payment: 10% of 18000 = 1800
+Remaining amount: 16200
+Month 3:
+Payment: 10% of 16200 = 1620
+Remaining amount: 14580
