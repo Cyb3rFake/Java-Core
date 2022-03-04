@@ -138,3 +138,93 @@ class MyClass {
 
     It's a best practice to keep the variables within a class private. The variables are accessible and modified using Getters and Setters.
     Tap Continue to learn about Getters and Setters.
+
+
+33.1 Getters & Setters
+
+Getters and Setters are used to effectively protect your data, particularly when creating classes. For each variable, the get method returns its value, while the set method sets the value.
+Getters start with get, followed by the variable name, with the first letter of the variable name capitalized.
+Setters start with set, followed by the variable name, with the first letter of the variable name capitalized.
+
+     Example:
+     public class Vehicle {
+       private String color;
+
+       // Getter
+       public String getColor() {
+         return color;
+       }
+
+      // Setter
+       public void setColor(String c) {
+         this.color = c;
+       }
+
+The getter method returns the value of the attribute.
+The setter method takes a parameter and assigns it to the attribute.
+The keyword this is used to refer to the current object. Basically, this.color is the color attribute of the current object.
+
+Once our getter and setter have been defined, we can use it in our main
+
+public class Vehicle {
+    private String color;
+
+    // Getter
+    public String getColor() {
+        return color;
+    }
+
+    // Setter
+    public void setColor(String c) {
+        this.color = c;
+    }
+}
+
+class Program {
+    public static void main(String[ ] args) {
+        Vehicle v1 = new Vehicle();
+        v1.setColor("Red");
+        System.out.println(v1.getColor());
+    }
+}
+Getters and setters allow us to have control over the values. You may, for example, validate the given value in the setter before actually setting the value.
+Getters and setters are fundamental building blocks for encapsulation, which will be covered in the next module.
+
+
+34.1 Constructors
+
+Constructors are special methods invoked when an object is created and are used to initialize them.
+A constructor can be used to provide initial values for object attributes.
+
+- A constructor name must be same as its class name.
+- A constructor must have no explicit return type.
+
+Example of a constructor:
+public class Vehicle {
+  private String color;
+  Vehicle() {
+     color = "Red";
+  }
+}
+
+The Vehicle() method is the constructor of our class, so whenever an object of that class is created, the color attribute will be set to "Red".
+A constructor can also take parameters to initialize attributes.
+
+public class Vehicle {
+  private String color;
+  Vehicle(String c) {
+    color = c;
+  }
+}
+You can think of constructors as methods that will set up your class by default, so you don’t need to repeat the same code every time.
+Using Constructors
+
+The constructor is called when you create an object using the new keyword.
+Example:
+public class MyClass {
+  public static void main(String[ ] args) {
+    Vehicle v = new Vehicle("Blue");
+  }
+}
+
+This will call the constructor, which will set the color attribute to "Blue".

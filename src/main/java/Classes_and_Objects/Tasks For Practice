@@ -49,9 +49,26 @@ Task
 Change the access modifiers of the Country class fields in order to perform the required output.
 Use public access modifier to provide access to any other classes.
 
-32.3
+32.3 Total Salries
 Access Modifiers
 You are a manager at company that have two employees, James and Tom.
 You wrote a program to calculate total employee salary: it creates two objects for workers and sets the corresponding parameters.
 But something is wrong. The program doesn't provide access to attributes. Fix it.
 Also complete the method to calculate and return the total salary.
+
+33.2 Student Information System
+Getters and Setters
+The program you are given receives name and age of student as input.
+Complete the program to set the values for the corresponding attributes of the Student class and prints out the final result. If the age is <0, program should output "Invalid age" and assign a 0 value to the age attribute.
+Sample Input
+Olivia
+-2
+Sample Output
+Invalid age
+Name: Olivia
+Age: 0
+Explanation
+-2 is invalid value for age attribute, that's why "Invalid age" and "Age: 0" is printed. Setter and Getter should handle this.
+You need to handle the conditions inside the Getter and the Setter.
+
+34.2 Organizing Screenshots
