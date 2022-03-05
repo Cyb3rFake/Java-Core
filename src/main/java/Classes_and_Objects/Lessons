@@ -228,3 +228,264 @@ public class MyClass {
 }
 
 This will call the constructor, which will set the color attribute to "Blue".
+
+35.1 Value & Reference Types
+Value types are the basic types, and include byte, short, int, long, float, double, boolean, and char.
+These data types store the values assigned to them in the corresponding memory locations.
+So, when you pass them to a method, you basically operate on the variable's value, rather than on the variable itself.
+Example:
+public class MyClass {
+    public static void main(String[ ] args) {
+        int x = 5;
+        addOneTo(x);
+        System.out.println(x);
+    }
+
+    static void addOneTo(int num) {
+        num = num + 1;
+    }
+}
+The method from the example above takes the value of its parameter, which is why the original variable is not affected and 5 remains as its value.
+Value Types
+What is the output of this code?
+public static void main(String[ ] args) {
+   int x = 4;
+   square(x);
+   System.out.println(x);
+}
+static void square(int x) {
+   x = x*x;
+}
+->4
+
+Reference Types
+
+A reference type stores a reference (or address) to the memory location where the corresponding data is stored.
+When you create an object using the constructor, you create a reference variable.
+For example, consider having a Person class defined:
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        Person j;
+        j = new Person("John");
+        j.setAge(25);
+        celebrateBirthday(j);
+        System.out.println(j.getAge());
+  }
+
+    static void celebrateBirthday(Person p) {
+        p.setAge(p.getAge() + 1);
+    }
+}
+
+public class Person {
+    private String name;
+    private int age;
+
+    Person (String n) {
+        this.name = n;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int a) {
+        this.age = a;
+    }
+}
+
+________________________________________________
+Reference Types
+What is the output of this code?
+public static void main(String[ ] args) {
+  Person p = new Person();
+  p.setAge(25);
+  change(p);
+  System.out.println(p.getAge());
+}
+static void change(Person p) {
+  p.setAge(10);
+}
+--------->10
+
+35.2 The Math Class
+
+The JDK defines a number of useful classes, one of them being the Math class, which provides predefined methods for mathematical operations.
+You do not need to create an object of the Math class to use it. To access it, just type in Math. and the corresponding method.
+
+Math.abs() returns the absolute value of its parameter.
+public class Program {
+    public static void main(String[] args) {
+        int a = Math.abs(10); //module
+        System.out.println(a);
+
+        int b = Math.abs(-20);
+        System.out.println(b);//module
+    }
+}
+
+Math.ceil() rounds a floating point value up to the nearest integer value. The rounded value is returned as a double
+public class Program {
+    public static void main(String[] args) {
+        double c = Math.ceil(7.342);//8.0
+        System.out.println(c);
+    }
+}
+
+Similarly, Math.floor() rounds a floating point value down to the nearest integer value.
+public class Program {
+    public static void main(String[] args) {
+        double f = Math.floor(7.343);//7
+        System.out.println(f);
+    }
+}
+
+Math.max() Mathc.min() returns the largest or minimal of its parameters.
+public class Program {
+    public static void main(String[] args) {
+        int m = Math.max(10, 20);
+        System.out.println(m);//20
+                int m = Math.min(10, 20);
+                System.out.println(m);//10
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        double p = Math.pow(2, 3); 2*2*2
+        System.out.println(p);--->8
+    }
+}
+
+37.1 Static
+
+Static
+When you declare a variable or a method as static, it belongs to the class, rather than to a specific instance. This means that only one instance of a static member exists, even if you create multiple objects of the class, or if you don't create any. It will be shared by all objects.
+Example:
+public class Counter {
+  public static int COUNT=0;
+  Counter() {
+    COUNT++;
+  }
+}
+
+The COUNT variable will be shared by all objects of that class.
+Now, we can create objects of our Counter class in main, and access the static variable.
+
+public class Counter {
+    public static int COUNT=0;
+    Counter() {
+        COUNT++;
+    }
+}
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        System.out.println(Counter.COUNT);
+    }
+}
+
+public class Counter {
+    public static int COUNT=0;
+    Counter() {
+        COUNT++;
+    }
+}
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        System.out.println(Counter.COUNT);
+    }
+}
+----->2
+
+The output is 2, because the COUNT variable is static and gets incremented by one each time a new object of the Counter class is created. In the code above, we created 2 objects.
+You can also access the static variable using any object of that class, such as c1.COUNT.
+
+It’s a common practice to use upper case when naming a static variable, although not mandatory.
+
+Static
+The same concept applies to static methods.
+public class Vehicle {
+  public static void horn() {
+    System.out.println("Beep");
+  }
+}
+
+Now, the horn method can be called without creating an object:
+public class Vehicle {
+    public static void horn() {
+        System.out.println("Beep");
+    }
+}
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        Vehicle.horn();
+    }
+}
+---->Beep
+
+Another example of static methods are those of the Math class, which is why you can call them without creating a Math object.
+Also, the main method must always be static.
+
+Static
+What output results from this code?
+class Person {
+public static int pCount;
+public static void main(String[ ] args) {
+   Person.pCount = 1;
+   Person.pCount++;
+   System.out.println(Person.pCount);
+  }
+}
+--->2
+
+38.1 Final
+Use the final keyword to mark a variable constant, so that it can be assigned only once.
+Example:
+class MyClass {
+    public static final double PI = 3.14;
+    public static void main(String[ ] args) {
+        System.out.println(PI);
+    }
+}
+
+PI is now a constant. Any attempt to assign it a value will cause an error.
+Methods and classes can also be marked final. This serves to restrict methods so that they can't be overridden and classes so that they can't be subclassed.
+These concepts will be covered in the next module.
+
+39.1 Packages
+
+Packages are used to avoid name conflicts and to control access to classes.
+A package can be defined as a group made up of similar types of classes, along with sub-packages.
+Creating a package in Java is quite easy. Simply right click on your src directory and click New->Package. Give your package a name and click Finish.
+You will notice that the new package appears in the project directory. Now you can move and create classes inside that package. We have moved our Vehicle, Counter and Animal classes to the package samples.
+
+When you move/create a class in your package, the following code will appear at the top of the list of files.
+package samples;
+
+This indicates the package to which the class belongs.
+Now, we need to import the classes that are inside a package in our main to be able to use them.
+The following example shows how to use the Vehicle class of the samples package.
+
+import samples.Vehicle;
+
+class MyClass {
+  public static void main(String[ ] args) {
+    Vehicle v1 = new Vehicle();
+    v1.horn();
+  }
+}
+
+Two major results occur when a class is placed in a package. First, the name of the package becomes a part of the name of the class. Second, the name of the package must match the directory structure where the corresponding class file resides.
+
+Use a wildcard to import all classes in a package.
+For example, import samples.* will import all classes in the samples package.
+
+60.1 Module 4 Quiz

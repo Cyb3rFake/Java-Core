@@ -72,3 +72,54 @@ Explanation
 You need to handle the conditions inside the Getter and the Setter.
 
 34.2 Organizing Screenshots
+Constructors
+We are creating our own application for taking screenshots.
+It has an option to set a name for screenshot-file to be saved. If user doesn't insert a name for it while saving, program automatically sets "Screenshot" name for it.
+Given program should create and save two screenshots: one with default name and one with name given by user. But something goes wrong.
+Fix the program by completing two constructors, so that given outputs works correctly.
+Sample Input
+Desktop
+Sample Output
+Screenshot
+Desktop
+
+
+34.3 Movie Tickets
+Constructors
+Your friend is a cashier at a movie theater. He knows that you are an awesome java developer so he asked you to help him out and create a program that gets movie title, row, and seat information and prints out a new ticket.
+Complete the existing code by adding a constructor to Ticket class so that it can be correctly initialized.
+Sample Input
+Jaws
+5
+1
+Sample Output
+Movie: Jaws
+Row: 5
+Seat: 1
+
+
+36.2 Exponents
+The Math Class
+Write a program to take numbers as input and return the first number raised to the power of the second number.
+Sample Input
+2
+4
+Sample Output
+16.0
+
+41.0 Binary Converter
+inary Converter
+
+
+The binary numeric system uses only two digits: 0 and 1. Computers operate in binary, meaning they store data and perform calculations using only zeros and ones.
+
+You need to make a program to convert integer numbers to their binary representation.
+Create a Converter class with a static toBinary() method, which returns the binary version of its argument.
+The code in main takes a number as input and calls the corresponding static method. Make sure the code works as expected.
+
+Sample Input:
+42
+Sample Output:
+101010
+
+You can use the following code to convert a number to binary:
