@@ -1,0 +1,396 @@
+1. Method Overloadng( Перегруузка)
+Когда у методов одинаковые имена но разные параметры это я вляется перегрузкой.
+Используется когда вычисления используемые в одном методе нужно применить к разным параметрам.
+
+Пример 1:
+
+public static void main(String[] args) {
+    int a = 5;
+    double b = 10.2;
+    System.out.println(doubleTheValue(a));
+    System.out.println(doubleTheValue(b));
+    }
+    public static int doubleTheValue(int a){
+        return a * 2;
+    }
+    public static double doubleTheValue(double b){
+        return b * 2;
+    }
+
+Пример 2:
+
+int max(int a, int b) {
+  if(a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
+Метод, показанный выше, будет работать только для параметров типа integer.
+Однако, возможно, мы захотим использовать его и для  дробных. Для этого вам нужно перегрузить метод max:
+
+class A{
+    public void doSomething(){
+        System.out.println("A");
+    }
+    public void doSomething(String str){
+        System.out.println(str);
+    }
+}
+public static void main(String[] args) {
+        A obj = new A();
+        obj.doSomething("B");
+        }
+
+--->B
+
+2. Абстрактный метод
+
+Абстрактный метод - это метод, который объявляется без реализации (без фигурных скобок, за которым следует точка с запятой): abstract void walk();
+
+Абстрактный класс определяется с помощью ключевого слова abstract.
+- Если класс объявлен абстрактным, он не может быть создан (вы не можете создавать объекты этого типа).
+- Чтобы использовать абстрактный класс, вы должны наследовать его от другого класса.
+- Любой класс, содержащий абстрактный метод, должен быть определен как абстрактный.
+
+abstract class Animal {
+    int legs = 0;
+    abstract void makeSound();
+}
+
+class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        c.makeSound();
+    }
+}
+************************************************
+
+abstract class Animal{
+    public int age;
+    public abstract int printAge();
+}
+class Dog extends Animal{
+    public int printAge() {
+        return age;
+    }
+}
+
+
+3.Интерфейсы
+Интерфейс - это полностью абстрактный класс, который содержит только абстрактные методы.
+Некоторые спецификации для интерфейсов:
+- Определяется с помощью ключевого слова interface.
+- Может содержать только статические конечные переменные.
+- Не может содержать конструктор, поскольку интерфейсы не могут быть созданы.
+- Интерфейсы могут расширять другие интерфейсы.
+- Класс может реализовывать любое количество интерфейсов.
+
+Наследуемый подкласс может иметь только один суперкласс
+Пример:
+interface Animal {
+    public void eat();
+    public void makeSound();
+}
+
+class Cat implements Animal {
+
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+
+    public void eat() {
+        System.out.println("omnomnom");
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        c.eat();
+        c.makeSound();
+
+4.Type Casting(приведение типа)
+
+Присвоение значения одного типа переменной другого типа называется приведением типа.
+Чтобы привести значение к определенному типу, поместите тип в круглые скобки и поместите его перед значением
+Пример:
+int a = (int)3.14
+System.out.println(a)
+
+Upcastin(повышение подкласса)
+Пример:
+Animal a = new Cat();
+Java автоматически преобразовала переменную типа Cat в тип Animal.
+
+Downcasting(понижение подкласса)
+Приведение объекта суперкласса к его подклассу называется понижением.
+Пример:
+Animal a = new Cat();
+((Cat)a).makeSound();
+Java  попытается привести переменную a к типу Cat и вызвать ее метод makeSound().
+
+Anonymous classes(анонимные классы)
+Создавая обьекты анонимных классов можно изменять исходный метод на лету
+Пример:
+
+class Machine {
+  public void start() {
+    System.out.println("Starting...");
+  }
+}
+
+class Program {
+    public static void main(String[ ] args) {
+        Machine m = new Machine() {
+            @Override public void start() {
+                System.out.println("Wooooo");
+            }
+        };
+        m.start();
+    }
+}
+---->Wooooo
+@Override - переопределение методов
+Модификация применима только к текущему объекту(m1), а не к самому классу. Поэтому, если мы создадим еще один объект этого класса, реализация метода start будет той, что определена в классе.
+Пример:
+class Machine {
+    public void start() {
+        System.out.println("Starting...");
+    }
+}
+
+class Program {
+    public static void main(String[ ] args) {
+        Machine m1 = new Machine() {
+            @Override public void start() {
+                System.out.println("Wooooo");
+            }
+        };
+        Machine m2 = new Machine();
+        m2.start();
+    }
+}
+--->Starting
+
+5.inner Classes (Внутренние классы)
+Java поддерживает вложенные классы; класс может быть членом другого класса.
+Создать внутренний класс довольно просто. Просто напишите класс в классе. В отличие от класса, внутренний класс может быть закрытым. Как только вы объявите внутренний класс закрытым, к нему нельзя будет получить доступ из объекта вне класса.
+
+Пример:
+
+class Robot {
+    int id;
+    Robot(int i) {
+        id = i;
+        Brain b = new Brain();
+        b.think();
+    }
+
+    private class Brain {
+        public void think() {
+            System.out.println(id + " is thinking");
+        }
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        Robot r = new Robot(1);
+    }
+}
+Класс Robot имеет внутренний класс Brain. Внутренний класс может получить доступ ко всем переменным-членам и методам своего внешнего класса, но к нему нельзя получить доступ из любого внешнего класса.
+Пример 2:
+public class Person{
+    class Hand{
+    public void shake(){
+        System.out.println("Hi");
+        }
+    }
+}
+
+6. The equals() method (сравнение объектов)
+(==)
+Помните, что когда вы создаете объекты, переменные хранят ссылки на объекты. Таким образом, когда вы сравниваете объекты с помощью оператора проверки на равенство (==), на самом деле сравниваются ссылки, а не значения объектов.
+    Пример:
+    class Animal {
+        String name;
+        Animal(String n) {
+            name = n;
+        }
+    }
+
+    class MyClass {
+        public static void main(String[ ] args) {
+            Animal a1 = new Animal("Robby");
+            Animal a2 = new Animal("Robby");
+            System.out.println(a1 == a2);
+        }
+    }
+ ----> false
+Несмотря на наличие двух объектов с одинаковыми именами, проверка на равенство возвращает false, потому что у нас есть два разных объекта (две разные ссылки или области памяти).
+Пример 2:
+class A {
+ private int x;
+ public static void main(String[ ] args) {
+   A a = new A();
+   a.x = 5;
+   A b = new A();
+   b.x = 5;
+   System.out.println(a == b);
+ }
+}
+---->false
+
+equals() (метод проверки семантичекого равенства)
+
+Каждый объект имеет предопределенный метод equals(), который используется для проверки семантического равенства.
+Но чтобы заставить его работать для наших классов, нам нужно переопределить его и проверить нужные нам условия.
+Существует простой и быстрый способ создания метода equals(), кроме написания его вручную.
+Просто щелкните правой кнопкой мыши в своем классе, перейдите в Source-> Generate hashCode() и equals()...
+Генератор автоматически создаст необходимые методы.
+    class Animal {
+      String name;
+      Animal(String n) {
+        name = n;
+      }
+      @Override
+      public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+      }
+      @Override
+      public boolean equals(Object obj) {
+        if (this == obj)
+          return true;
+        if (obj == null)
+          return false;
+        if (getClass() != obj.getClass())
+          return false;
+        Animal other = (Animal) obj;
+        if (name == null) {
+          if (other.name != null)
+            return false;
+        } else if (!name.equals(other.name))
+          return false;
+        return true;
+      }
+    }
+Автоматически сгенерированный метод hashCode() используется для определения места внутреннего хранения объекта. Всякий раз, когда вы реализуете equals, вы ДОЛЖНЫ также реализовывать hashCode. Мы можем снова запустить тест,
+используя метод equals:
+
+    class Animal {
+        String name;
+        Animal(String n) {
+            name = n;
+        }
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + ((name == null) ? 0 : name.hashCode());
+            return result;
+        }
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (obj == null)
+                return false;
+            if (getClass() != obj.getClass())
+                return false;
+            Animal other = (Animal) obj;
+            if (name == null) {
+                if (other.name != null)
+                    return false;
+            } else if (!name.equals(other.name))
+                return false;
+            return true;
+        }
+    }
+
+    class Program {
+        public static void main(String[ ] args) {
+            Animal a1 = new Animal("Robby");
+            Animal a2 = new Animal("Robby");
+            System.out.println(a1.equals(a2));
+        }
+    }
+---->true
+
+Вы можете использовать это же меню для создания других полезных методов, таких как геттеры и сеттеры для атрибутов вашего класса.
+Пример 2:
+    class A{
+        private int x;
+        public boolean equals(Object o) {
+            return ((A)o).x == this.x;
+        }
+
+        public static void main(String[] args) {
+        A a = new A();
+        a.x = 9;
+        A b = new A();
+        b.x = 5;
+        System.out.println(a.equal(b))
+        }
+    }
+
+7. Enums()
+Enum — это специальный тип, используемый для определения коллекций констант.
+Вот простой пример Enum:
+
+    enum Rank {
+      SOLDIER,
+      SERGEANT,
+      CAPTAIN
+    }
+Обратите внимание, что значения разделены запятыми. Вы можете ссылаться на константы в приведенном выше перечислении с помощью точечного синтаксиса.
+
+Rank a = Rank.SOLDIER;
+
+По сути, перечисления определяют переменные, которые представляют элементы фиксированного набора.
+После объявления Enum мы можем проверить соответствующие значения, например, с помощью оператора switch.
+
+public class Program {
+    enum Rank {
+        SOLDIER,
+        SERGEANT,
+        CAPTAIN
+    }
+    public static void main(String[] args) {
+        Rank a = Rank.SOLDIER;
+
+        switch(a) {
+            case SOLDIER:
+                System.out.println("Soldier says hi!");
+                break;
+            case SERGEANT:
+                System.out.println("Sergeant says Hello!");
+                break;
+            case CAPTAIN:
+                System.out.println("Captain says Welcome!");
+                break;
+        }
+    }
+}
+
+*******************
+public Color {
+  RED, BLUE, GREEN;
+}
+*******************
+
+Вы всегда должны использовать Enums, когда переменная (особенно параметр метода) может принимать только одно из небольшого набора возможных значений.
+Если вы используете Enums вместо целых чисел (или строковых кодов), вы увеличиваете количество проверок во время компиляции и избегаете ошибок из-за передачи недопустимых констант, а также документируете, какие значения допустимы для использования.
+
+
+
