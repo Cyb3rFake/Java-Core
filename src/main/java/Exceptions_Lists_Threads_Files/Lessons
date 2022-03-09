@@ -1,12 +1,332 @@
 57.1 Exception Handling
+Exceptions
+
+An exception is a problem that occurs during program execution. Exceptions cause abnormal termination of the program.
+Exception handling is a powerful mechanism that handles runtime errors to maintain normal application flow.
+
+An exception can occur for many different reasons. Some examples:
+- A user has entered invalid data.
+- A file that needs to be opened cannot be found.
+- A network connection has been lost in the middle of communications.
+- Insufficient memory and other issues related to physical resources.
+
+As you can see, exceptions are caused by user error, programmer error, or physical resource issues. However, a well-written program should handle all possible exceptions.
+
+Exception Handling
+
+
+Exceptions can be caught using a combination of the try and catch keywords.
+A try/catch block is placed around the code that might generate an exception.
+Syntax:
+try {
+  //some code
+} catch (Exception e) {
+  //some code to handle errors
+}
+
+A catch statement involves declaring the type of exception you are trying to catch. If an exception occurs in the try block, the catch block that follows the try is checked. If the type of exception that occurred is listed in a catch block, the exception is passed to the catch block much as an argument is passed into a method parameter.
+The Exception type can be used to catch all possible exceptions.
+
+The example below demonstrates exception handling when trying to access an array index that does not exist:
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        try {
+            int a[ ] = new int[2];
+            System.out.println(a[5]);
+        } catch (Exception e) {
+            System.out.println("An error occurred");
+        }
+    }
+}
+
+Without the try/catch block this code should crash the program, as a[5] does not exist.
+Notice the (Exception e) statement in the catch block - it is used to catch all possible Exceptions.
+
 58.1 Multiple Exceptions
+throw
+
+The throw keyword allows you to manually generate exceptions from your methods. Some of the numerous available exception types include the IndexOutOfBoundsException, IllegalArgumentException, ArithmeticException, and so on.
+For example, we can throw an ArithmeticException in our method when the parameter is 0.
+
+public class Program {
+    static int div(int a, int b) throws ArithmeticException {
+        if(b == 0) {
+            throw new ArithmeticException("Division by Zero");
+        } else {
+            return a / b;
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println(div(42, 0));
+    }
+}
+---->Division by Zero
+
+The throws statement in the method definition defines the type of Exception(s) the method can throw.
+Next, the throw keyword throws the corresponding exception, along with a custom message.
+If we call the div method with the second parameter equal to 0, it will throw an ArithmeticException with the message "Division by Zero".
+
+Multiple exceptions can be defined in the throws statement using a comma-separated list.
+
+Example2:
+public void do(int x)
+    throws IOException{
+  if(x<0)
+  {
+    throw new IOException();
+  }
+}
+
+Exception Handling
+A single try block can contain multiple catch blocks that handle different exceptions separately.
+
+Example:
+try {
+  //some code
+} catch (ExceptionType1 e1) {
+  //Catch block
+} catch (ExceptionType2 e2) {
+  //Catch block
+} catch (ExceptionType3 e3) {
+  //Catch block
+}
+
+All catch blocks should be ordered from most specific to most general.
+Following the specific exceptions, you can use the Exception type to handle all other exceptions as the last catch.
+
 59.1 Threads
+Java is a multi-threaded programming language. This means that our program can make optimal use of available resources by running two or more components concurrently, with each component handling a different task.
+You can subdivide specific operations within a single application into individual threads that all run in parallel.
+The following diagram shows the life-cycle of a thread.
+
+There are two ways to create a thread.
+1. Extend the Thread class
+Inherit from the Thread class, override its run() method, and write the functionality of the thread in the run() method.
+Then you create a new object of your class and call it's start method to run the thread.
+Example:
+
+class Loader extends Thread {
+    public void run() {
+        System.out.println("Hello");
+    }
+}
+
+class MyClass {
+    public static void main(String[ ] args) {
+        Loader obj = new Loader();
+        obj.start();
+    }
+}
+--->Hello
+
+As you can see, our Loader class extends the Thread class and overrides its run() method.
+When we create the obj object and call its start() method, the run() method statements execute on a different thread.
+Every Java thread is prioritized to help the operating system determine the order in which to schedule threads. The priorities range from 1 to 10, with each thread defaulting to priority 5.
+You can set the thread priority with the setPriority() method.
+
 60.1 Runtime vs Checker Exceptions
+Types of Exceptions
+There are two exception types, checked and unchecked (also called runtime).
+The main difference is that checked exceptions are checked when compiled, while unchecked exceptions are checked at runtime.
+As mentioned in our previous lesson, Thread.sleep() throws an InterruptedException.
+This is an example of a checked exception. Your code will not compile until you've handled the exception.
+public class MyClass {
+  public static void main(String[ ] args) {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      //some code
+    }
+  }
+}
+
+We have seen examples of unchecked exceptions, which are checked at runtime, in previous lessons.
+Example (when attempting to divide by 0):
+public class MyClass {
+    public static void main(String[ ] args) {
+        int value = 7;
+        value = value / 0;
+    }
+}
+It is good to know the Types of Exceptions because they can help you debug your code faster.
+
 61.1 ArrayLists
+The Java API provides special classes to store and manipulate groups of objects. One such class is the ArrayList. Standard Java arrays are of a fixed length, which means that after they are created, they cannot expand or shrink. On the other hand, ArrayLists are created with an initial size, but when this size is exceeded, the collection is automatically enlarged. When objects are removed, the ArrayList may shrink in size. Note that the ArrayList class is in the java.util package, so it's necessary to import it before using it. Create an ArrayList as you would any object.
+
+import java.util.ArrayList;
+//...
+ArrayList colors = new ArrayList();
+
+You can optionally specify a capacity and type of objects the ArrayList will hold:
+
+ArrayList<String> colors = new ArrayList<String>(10);
+
+ArrayLists store objects. Thus, the type specified must be a class type. You cannot pass, for example, int as the objects' type. Instead, use the special class types that correspond to the desired value type, such as Integer for int, Double for double, and so on.
+
+The ArrayList class provides a number of useful methods for manipulating its objects.
+The add() method adds new objects to the ArrayList. Conversely, the remove() method removes objects from the ArrayList.
+Example:
+
+import java.util.ArrayList;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        ArrayList<String> colors = new ArrayList<String>();
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Green");
+        colors.add("Orange");
+        colors.remove("Green");
+
+        System.out.println(colors);
+    }
+}
+
+Other useful methods include the following:
+- contains(): Returns true if the list contains the specified element
+- get(int index): Returns the element at the specified position in the list
+- size(): Returns the number of elements in the list
+- clear(): Removes all of the elements from the list
+
+Note: As with arrays, the indexing starts with 0.
+
 62.1 LinkedLists
+The LinkedList is very similar in syntax to the ArrayList.
+You can easily change an ArrayList to a LinkedList by changing the object type.
+You cannot specify an initial capacity for the LinkedList.
+
+import java.util.LinkedList;
+public class MyClass {
+    public static void main(String[ ] args) {
+        LinkedList<String> c = new LinkedList<String>();
+        c.add("Red");
+        c.add("Blue");
+        c.add("Green");
+        c.add("Orange");
+        c.remove("Green");
+        System.out.println(c);
+    }
+}
+
+LinkedList vs. ArrayList
+
+The most notable difference between the LinkedList and the ArrayList is in the way they store objects.
+The ArrayList is better for storing and accessing data, as it is very similar to a normal array.
+The LinkedList is better for manipulating data, such as making numerous inserts and deletes.
+
+In addition to storing the object, the LinkedList stores the memory address (or link) of the element that follows it.
+It's called a LinkedList because each element contains a link to the neighboring element.
+
+import java.util.LinkedList;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        LinkedList<String> c = new LinkedList<String>();
+        c.add("Red");
+        c.add("Blue");
+        c.add("Green");
+        c.add("Orange");
+        c.remove("Green");
+
+        for(String s: c) {
+            System.out.println(s);
+        }
+    }
+}
+
+Summary:
+- Use an ArrayList when you need rapid access to your data.
+- Use a LinkedList when you need to make a large number of inserts and/or deletes.
+
 63.1 HashMap
+Arrays and Lists store elements as ordered collections, with each element given an integer index.
+HashMap is used for storing data collections as key and value pairs. One object is used as a key (index) to another object (the value).
+The put, remove, and get methods are used to add, delete, and access values in the HashMap.
+Example:
+import java.util.HashMap;
+public class MyClass {
+    public static void main(String[ ] args) {
+        HashMap<String, Integer> points = new HashMap<String, Integer>();
+        points.put("Amy", 154);
+        points.put("Dave", 42);
+        points.put("Rob", 733);
+        System.out.println(points.get("Dave"));
+    }
+}
+
+We have created a HashMap with Strings as its keys and Integers as its values.
+Use the get method and the corresponding key to access the HashMap elements.
+
+A HashMap cannot contain duplicate keys. Adding a new item with a key that already exists overwrites the old element.
+The HashMap class provides containsKey and containsValue methods that determine the presence of a specified key or value.
+If you try to get a value that is not present in your map, it returns the value of null.
+null is a special type that represents the absence of a value.
+
 64.1 Sets
+A Set is a collection that cannot contain duplicate elements. It models the mathematical set abstraction.
+One of the implementations of the Set is the HashSet class.
+Example:
+import java.util.HashSet;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        HashSet<String> set = new HashSet<String>();
+        set.add("A");
+        set.add("B");
+        set.add("C");
+        System.out.println(set);
+    }
+}
+
+LinkedHashSet
+
+The HashSet class does not automatically retain the order of the elements as they're added. To order the elements, use a LinkedHashSet, which maintains a linked list of the set's elements in the order in which they were inserted.
+What is hashing?
+A hash table stores information through a mechanism called hashing, in which a key's informational content is used to determine a unique value called a hash code.
+So, basically, each element in the HashSet is associated with its unique hash code.
+You've learned about the various collection types that are available in Java, including Lists, Maps, and Sets. The choice of which one to use is specific to the data you need to store and manipulate.
+
 65.1 Sorting Lists
+
+For the manipulation of data in different collection types, the Java API provides a Collections class, which is included in the java.util package. One of the most popular Collections class methods is sort(), which sorts the elements of your collection type. The methods in the Collections class are static, so you don't need a Collections object to call them.
+Example:
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        ArrayList<String> animals = new ArrayList<String>();
+        animals.add("tiger");
+        animals.add("cat");
+        animals.add("snake");
+        animals.add("dog");
+
+        Collections.sort(animals);
+
+        System.out.println(animals);
+    }
+}
+
+You can call the sort() methods on different types of Lists, such as Integers.
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        nums.add(3);
+        nums.add(36);
+        nums.add(73);
+        nums.add(40);
+        nums.add(1);
+
+        Collections.sort(nums);
+        System.out.println(nums);
+    }
+}
+
 66.1 Iterators
 67.1 Working with Files
 68.1 Reading a Files

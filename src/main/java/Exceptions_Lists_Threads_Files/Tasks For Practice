@@ -1,9 +1,82 @@
 57.2 Category Handling
+Exception Handling
+An online electronics store has 5 product categories - PCs, Notebooks, Tablets, Phones, and Аccessories.
+The program you are given declares an array and stores that types into it.
+Write a program to take N number as input and output the element of the array with N index. If the index is out of range, program should output "Wrong Option".
+Sample Input
+5
+Sample Output
+Wrong Option
+
 58.2 No Zeroes
+Multiple Exceptions
+
+You need to write a divider program which will operate with integers,
+The program you are given should take two integers as input and execute the division, but we need to handle two exceptions:
+1. the divider shouldn't be zero
+2. both inputs should be integers.
+Complete the program to handle them. For the first exception, the program should output "Еrror: division by zero"; and for the second one, "Error: wrong value type".
+Sample Input
+1
+b
+Sample Output
+Error: wrong value type
+
 59.2 Welcome
+Threads
+We are writing a registration program for our app. At first it should welcome the users, then ask the users to enter their names.
+But program you are given executes this sequence in reverse order.
+Complete the program by extending the Thread class for Welcome and Name classes, then setting priorities for their run methods so that the program outputs the messages in the correct order.
+
+Use setPriority(number) method on the objects - obj.setPriority(number).
+The higher the number, the higher the priority.
+
+
 61.2 Playing Keep Away With 3
+ArrayList
+
+
+The program you are given declares an even nums ArrayList.
+Write a program to take numbers as input and add them an ArrayList while the size of the ArrayList isn't equal to 3.
+Then calculate and output the average of all values in integers.
+Sample Input
+5
+2
+4
+Sample Output
+3
+
+
 62.2 Practice Makes Perfect
+The program you are given declares LinkedList "words".
+Write a program to take words as input and add them to LinkedList untill its size isn't equal to 5, then output only those words whose length is more than 4 characters.
+Sample Input
+Java
+practice
+is
+makes
+perfect
+Sample Output
+practice
+makes
+perfect
+length() method returns the number of characters in a string.
+
+
 63.2 Age Dependent
+
+The program you are given defines and outputs HashMap, where the names of employees are stored as keys, and their ages as values.
+It also takes N number from user as age limit. Write code to delete all the employees whom age is less than N number.
+The line of code for the output of HashMap object is already provided.
+Sample Input
+25
+Sample Output
+{Robert=32, John=28}
+Hint
+Use get() method to access values in the HashMap and remove() to delete them.
+
+
+
 65.2 Minimum And Maximum
 66.2 Link Of The List
 69.2 Getting Things Done!
