@@ -75,9 +75,21 @@ Sample Output
 Hint
 Use get() method to access values in the HashMap and remove() to delete them.
 
-
-
 65.2 Minimum And Maximum
+Sorting Lists
+The program you are given declares ArrayList of integers.
+Complete the program to take numbers as input and add them to ArrayList until its size isn't equal to 5. Then output its maximum and minimum values.
+Sample Input
+4
+12
+3
+88
+96
+Sample Output
+96
+3
+
+
 66.2 Link Of The List
 69.2 Getting Things Done!
 71.0 Bowling Game

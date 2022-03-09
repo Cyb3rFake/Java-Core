@@ -725,4 +725,59 @@ public class MyClass {
     }
 }
 
+10. Iterators(Итераторы)
+
+Итератор — это объект, который позволяет циклически перемещаться по коллекции, получать или удалять элементы.
+Прежде чем вы сможете получить доступ к коллекции через итератор, вы должны получить его.
+Каждый из классов коллекций предоставляет метод iterator(), который возвращает итератор в начало коллекции.
+Используя этот объект итератора, вы можете получить доступ к каждому элементу в коллекции, по одному элементу за раз.
+Класс Iterator предоставляет следующие методы:
+
+hasNext(): возвращает значение true, если есть еще хотя бы один элемент; в противном случае возвращается ложь.
+next(): возвращает следующий объект и продвигает итератор.
+remove(): удаляет из коллекции последний объект, возвращенный функцией next.
+Класс Iterator должен быть импортирован из пакета java.util.
+Пример:
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MyClass {
+public static void main(String[ ] args) {
+LinkedList<String> animals = new LinkedList<String>();
+animals.add("fox");
+animals.add("cat");
+animals.add("dog");
+animals.add("rabbit");
+
+Iterator<String> it = animals.iterator();
+String value = it.next();
+System.out.println(value);
+    }
+}
+it.next() возвращает первый элемент в списке, а затем перемещает итератор к следующему элементу.
+Каждый раз, когда вы вызываете it.next(), итератор перемещается к следующему элементу списка.
+
+Обычно итераторы используются в циклах. На каждой итерации цикла вы можете получить доступ к соответствующему элементу списка.
+Пример:
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        LinkedList<String> animals = new LinkedList<String>();
+        animals.add("fox");
+        animals.add("cat");
+        animals.add("dog");
+        animals.add("rabbit");
+
+        Iterator<String> it = animals.iterator();
+        while(it.hasNext()) {
+            String value = it.next();
+            System.out.println(value);
+        }
+    }
+}
+Здесь цикл while определяет, есть ли в итераторе дополнительные элементы, печатает значение элемента и продвигает итератор к следующему.
+
 
