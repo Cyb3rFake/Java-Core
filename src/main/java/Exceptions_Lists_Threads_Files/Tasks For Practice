@@ -10,7 +10,6 @@ Wrong Option
 
 58.2 No Zeroes
 Multiple Exceptions
-
 You need to write a divider program which will operate with integers,
 The program you are given should take two integers as input and execute the division, but we need to handle two exceptions:
 1. the divider shouldn't be zero
@@ -27,15 +26,12 @@ Threads
 We are writing a registration program for our app. At first it should welcome the users, then ask the users to enter their names.
 But program you are given executes this sequence in reverse order.
 Complete the program by extending the Thread class for Welcome and Name classes, then setting priorities for their run methods so that the program outputs the messages in the correct order.
-
 Use setPriority(number) method on the objects - obj.setPriority(number).
 The higher the number, the higher the priority.
 
 
 61.2 Playing Keep Away With 3
 ArrayList
-
-
 The program you are given declares an even nums ArrayList.
 Write a program to take numbers as input and add them an ArrayList while the size of the ArrayList isn't equal to 3.
 Then calculate and output the average of all values in integers.
@@ -64,7 +60,6 @@ length() method returns the number of characters in a string.
 
 
 63.2 Age Dependent
-
 The program you are given defines and outputs HashMap, where the names of employees are stored as keys, and their ages as values.
 It also takes N number from user as age limit. Write code to delete all the employees whom age is less than N number.
 The line of code for the output of HashMap object is already provided.
@@ -91,5 +86,30 @@ Sample Output
 
 
 66.2 Link Of The List
+Iterators
+The program you are given declares a LinkedList of integers, takes 5 numbers from user, and add them to it.
+Write a program to calculate and output the sum of them elements.
+Sample Input
+4
+3
+50
+3
+8
+Sample Output
+68
+
 69.2 Getting Things Done!
+Creating & Writing Files
+You want to plan your day and create your to do list.
+Complete the program to take the names of 3 tasks as input and write them down in the file "tasks.txt", each on a new line.
+Then use the readFile() method to output the tasks.
+Sample Code
+Workout
+Report
+Pool
+Sample Output
+Workout
+Report
+Pool
+
 71.0 Bowling Game

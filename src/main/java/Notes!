@@ -780,4 +780,169 @@ public class MyClass {
 }
 Здесь цикл while определяет, есть ли в итераторе дополнительные элементы, печатает значение элемента и продвигает итератор к следующему.
 
+11. Working with Files(работа с файлами)
+Пакет java.io включает класс File, позволяющий работать с файлами. Для начала создайте объект File и укажите путь к файлу в конструкторе.
 
+import java.io.File;
+...
+File file = new File("C:\\data\\input-file.txt");
+
+С помощью метода exists() вы можете определить, существует ли файл.
+
+import java.io.File;
+
+public class MyClass {
+  public static void main(String[ ] args) {
+    File x = new File("C:\\sololearn\\test.txt");
+    if(x.exists()) {
+     System.out.println(x.getName() +  "exists!");
+    }
+    else {
+     System.out.println("The file does not exist");
+    }
+  }
+}
+Приведенный выше код выводит сообщение о том, существует ли файл по указанному пути.
+Метод getName() возвращает имя файла. Обратите внимание, что мы использовали двойную обратную косую черту в пути, так как одна обратная косая черта должна быть экранирована в строке пути.
+
+Reading a File(чтение из файла)
+Файлы удобны для хранения и извлечения данных, и существует несколько способов чтения из файла.
+Один из самых простых способов — использовать класс Scanner из пакета java.util.
+Конструктор класса Scanner может принимать объект File в качестве входных данных. Чтобы прочитать содержимое текстового файла по пути «C:\\sololearn\\test.txt», нам нужно создать объект File с соответствующим путем и передать его объекту Scanner.
+
+try {
+  File x = new File("C:\\sololearn\\test.txt");
+  Scanner sc = new Scanner(x);
+}
+ catch (FileNotFoundException e) {
+
+}
+
+Класс Scanner наследуется от Iterator, поэтому ведет себя как один. Мы можем использовать метод next() объекта Scanner для чтения содержимого файла.
+
+try {
+  File x = new File("C:\\sololearn\\test.txt");
+  Scanner sc = new Scanner(x);
+  while(sc.hasNext()) {
+    System.out.println(sc.next());
+  }
+  sc.close();
+} catch (FileNotFoundException e) {
+  System.out.println("Error");
+}
+
+Содержимое файла выводится слово за словом, потому что метод next() возвращает каждое слово отдельно.
+
+Хорошей практикой всегда является закрытие файла после завершения работы с ним.
+Один из способов сделать это — использовать метод close() сканера.
+
+try {
+    File f = new File("a.txt");
+    Scanner sc = new Scanner(f);
+    while (sc.hasNext()){
+    String a = sc.next();
+    String b = sc.next()
+    System.out.println(a + "" + b);
+    }
+    sc.close();
+}
+cath (Exception e){
+    System.out.println("Error")
+ }
+
+
+ Creating Files(Создание файлов)
+
+Formatter, еще один полезный класс в пакете java.util, используется для создания контента и его записи в файлы.
+Пример:
+import java.util.Formatter;
+
+public class MyClass {
+   public static void main(String[ ] args) {
+  try {
+    Formatter f = new Formatter("C:\\sololearn\\test.txt");
+  } catch (Exception e) {
+      System.out.println("Error");
+  }
+  }
+}
+
+Создает пустой файл по указанному пути. Если файл уже существует, он будет перезаписан.
+
+Writing to Files(Запись в файл)
+После создания файла вы можете записать в него содержимое, используя тот же метод format() объекта Formatter.
+Пример:
+
+import java.io.File;
+import java.util.Scanner;
+import java.util.Formatter;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        try {
+            Formatter f = new Formatter("test.txt");
+            f.format("%s %s %s", "1","John", "Smith \r\n");
+            f.format("%s %s %s", "2","Amy", "Brown");
+            f.close();
+
+            File x = new File("test.txt");
+            Scanner sc = new Scanner(x);
+            while(sc.hasNext()) {
+                System.out.println(sc.next());
+            }
+            sc.close();
+        } catch (Exception e) {
+        System.out.println("Error");
+        }
+    }
+}
+
+Метод format() форматирует свои параметры в соответствии с первым параметром.
+%s означает строку и заменяется первым параметром после формата.
+Второй %s заменяется следующим и так далее.
+Итак, формат %s %s %s обозначает три строки, разделенные пробелами.
+
+Примечание. \r\n — это символ новой строки в Windows.
+Приведенный выше код создает файл со следующим содержимым:
+
+1 Джон Смит
+2 Эми Браун
+
+Не забудьте закрыть файл, как только закончите писать в него!
+
+__________try catch_________________
+void myFunc(int a, int b){
+try {
+    System.out.println(a/b);
+  }
+catch (Exception e) {
+     System.out.println("Error");
+  }
+________________________________________________
+_______________throws___________________________
+void myFunc(int arg) throws IllegalArgumentException {
+if (arg < 0)
+   throw new IllegalArgumentException();
+}
+________________________________________________
+________________________________________________
+How many lines of output will this code produce?
+class B implements Runnable {
+   public void run() {
+     System.out.println("B");
+   }
+}
+class A extends Thread {
+   public void run() {
+    System.out.println("A");
+    Thread t = new Thread(new B());
+    t.start();
+   }
+public static void main(String[ ] args) {
+   A object = new A();
+   object.start();
+   }
+}
+-->A
+-->B
+__________________________________________________________
