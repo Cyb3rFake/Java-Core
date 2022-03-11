@@ -5,5 +5,5 @@
 ## Arrays(6/6)
 ## Classes and Objects(15/15)
 ## More on Classes(15/15)
-## Exceptions, Lists, Threads & Files(10/15)
+## Exceptions, Lists, Threads & Files(15/15)
 
