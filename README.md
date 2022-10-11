@@ -1,6 +1,6 @@
 # Прохождение курса по Java на платформе SoloLearn.com
 
-## Basic Concepts(10/10)
+## Basic Concepts(10/10)https://github.com/Cyb3rFake/Java-Core/tree/master/src/main/java/Basic_Concepts
 ## Conditionals and Loops (10/10)
 ## Arrays(6/6)
 ## Classes and Objects(15/15)
